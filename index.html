@@ -1,28 +1,59 @@
-<html i18n-values="dir:textdirection;lang:language">
-<head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<script src="birds.js"></script>
-</head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Birds store</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
 <body>
 
-<table class="table">
-  <tr>
-    <th>Firstname</th>
-    <th>Lastname</th> 
-    <th>Age</th>
-  </tr>
-  <tr>
-    <td>Jill</td>
-    <td>Smith</td> 
-    <td>50</td>
-  </tr>
-  <tr>
-    <td>Eve</td>
-    <td>Jackson</td> 
-    <td>94</td>
-  </tr>
-</table>
+<div class="row">
+  <div class="col-md-2">
+    <div>Add to stock</div>
+    <div>Choose your bird type <input type="text" id="add-type"></div>
+    <div>Choose quantity <br> <input type="number" id="add-quantity" min="1" max="50"></div>
+    <div>Price <br> <input type="number" id="add-price" min="1" max="50"></div>
+    <div><button onclick="addBird()">Add</button></div>
+  </div>
+  <div class="col-md-8">
+  <div>Birds</div>
+    <table class="table" id="stock-table">
+    </table>
+  <div>Log</div>
+    <table class="table">
+      <tr>
+        <th>Type</th>
+        <th>Count</th>
+        <th>Price</th>
+        <th>Operation</th>
+      </tr>
+      <tr>
+        <td>Eagle</td>
+        <td>3</td> 
+        <td>50</td>
+        <td>Sell</td>
+      </tr>
+      <tr>
+        <td>Parrot</td>
+        <td>3</td> 
+        <td>94</td>
+        <td>Add</td>
+      </tr>
+    </table>
+  </div>
+  <div class="col-md-2">
+    <div>Buy</div>
+    <div><select id="type-select">
+      </select></div>
+      <div><input type="number" id="buy-quantity" min="1" max="50"></div>
+      <div><button onclick="sellBird()">Buy</button></div>
+  </div>
+</div>
 
+<script src="birds.js"></script>
 </body>
 
 </html>
